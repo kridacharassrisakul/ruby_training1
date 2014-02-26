@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+  <tr>
+    <td><%= @sudoku.field11 %></td>
+    <td><%= @sudoku.field12 %></td>
+    <td><%= @sudoku.field13 %></td>
+  </tr> 
+  <tr>
+    <td><%= @sudoku.field21 %></td>
+    <td><%= @sudoku.field22 %></td>
+    <td><%= @sudoku.field23 %></td>
+  </tr> 
+  <tr>
+    <td><%= @sudoku.field31 %></td>
+    <td><%= @sudoku.field32 %></td>
+    <td><%= @sudoku.field33 %></td>
+  </tr>
+
+  <tr>
+      <% @c = [@sudoku.field11,@sudoku.field12,@sudoku.field13,@sudoku.field21,@sudoku.field22,@sudoku.field23,@sudoku.field31,@sudoku.field32,@sudoku.field33] %>
+      <% @chk = 'correct'%>
+      <% if @c.count{|x|x <= 9 && x >= 1} != 0 then @chk = 'correct' else @chk = 'not correct' end %>
+      <% for i in 1..9 %>
+        <% if @c.count(i) != 1 then @chk = 'not correct' end %>
+      <% end %>
+      <td colspan = "3"><%= 'Result : ' + @chk %> <td>
+  </tr>
+</table>
+
+
+<%= link_to 'Edit', edit_sudoku_path(@sudoku) %> |
+<%= link_to 'Back', sudokus_path %>
