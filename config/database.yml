@@ -6,10 +6,10 @@
 
 development:
   adapter : postgresql
-  host: localhost
-  database: five_minute_development
-  user: ubuntu
-  password: ubuntu
+  host: ec2-54-204-45-126.compute-1.amazonaws.com
+  database: d1sue1i9frpcm
+  user: lobnobgltuehay
+  password: 0hErUnepEsaCcO9BvOFgo2ceHq
   
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
