@@ -2,28 +2,230 @@
 
 <table>
   <tr>
-    <td><%= @sudoku.field11 %></td>
-    <td><%= @sudoku.field12 %></td>
-    <td><%= @sudoku.field13 %></td>
-  </tr> 
-  <tr>
-    <td><%= @sudoku.field21 %></td>
-    <td><%= @sudoku.field22 %></td>
-    <td><%= @sudoku.field23 %></td>
-  </tr> 
-  <tr>
-    <td><%= @sudoku.field31 %></td>
-    <td><%= @sudoku.field32 %></td>
-    <td><%= @sudoku.field33 %></td>
+    <th>Name</th>
   </tr>
-
   <tr>
-      <% @temp = [1,2,3,4,5,6,7,8,9] %>
-      <% @c = [@sudoku.field11,@sudoku.field12,@sudoku.field13,@sudoku.field21,@sudoku.field22,@sudoku.field23,@sudoku.field31,@sudoku.field32,@sudoku.field33] %>
-      <td colspan = "3"><%='Result : ' %> <%= @c.sort == @temp %> <td>
+    <td><%= @sudoku.name %></td>
+  </tr>
+  <% @temp = [1,2,3,4,5,6,7,8,9] %>
+  <% @chk = true %>
+  <% @row1 = [] %>
+  <% @row2 = [] %>
+  <% @row3 = [] %>
+  <% @row4 = [] %>
+  <% @row5 = [] %>
+  <% @row6 = [] %>
+  <% @row7 = [] %>
+  <% @row8 = [] %>
+  <% @row9 = [] %>
+  <% @col1 = [] %>
+  <% @col2 = [] %>
+  <% @col3 = [] %>
+  <% @col4 = [] %>
+  <% @col5 = [] %>
+  <% @col6 = [] %>
+  <% @col7 = [] %>
+  <% @col8 = [] %>
+  <% @col9 = [] %>
+  <% @sub1 = [] %>
+  <% @sub2 = [] %>
+  <% @sub3 = [] %>
+  <% @sub4 = [] %>
+  <% @sub5 = [] %>
+  <% @sub6 = [] %>
+  <% @sub7 = [] %>
+  <% @sub8 = [] %>
+  <% @sub9 = [] %>
+  <% i = 1 %>
+  <% @sudoku.details.each do |field| %>
+  <tr>
+  <td><%= '================================================================================' %></td>
+  </tr>
+  <tr>
+    <td><%= field.column_1 %><%= '|' %><%= field.column_2 %><%= '|' %><%= field.column_3 %><%= '|' %><%= field.column_4 %><%= '|' %><%= field.column_5 %><%= '|' %><%= field.column_6 %><%= '|' %><%= field.column_7 %><%= '|' %><%= field.column_8 %><%= '|' %><%= field.column_9 %></td>
+  </tr>
+  <% case i %>
+  <% when 1 %>
+  <% @row1.push(field.column_1,field.column_2,field.column_3,field.column_4,field.column_5,field.column_6,field.column_7,field.column_8,field.column_9) %>
+  <% @col1.push(field.column_1) %>
+  <% @col2.push(field.column_2) %>
+  <% @col3.push(field.column_3) %>
+  <% @col4.push(field.column_4) %>
+  <% @col5.push(field.column_5) %>
+  <% @col6.push(field.column_6) %>
+  <% @col7.push(field.column_7) %>
+  <% @col8.push(field.column_8) %>
+  <% @col9.push(field.column_9) %>
+  <% @sub1.push(field.column_1,field.column_2,field.column_3)%>
+  <% @sub2.push(field.column_4,field.column_5,field.column_6)%>
+  <% @sub3.push(field.column_7,field.column_8,field.column_9)%>
+  <% when 2 %>
+  <% @row2.push(field.column_1,field.column_2,field.column_3,field.column_4,field.column_5,field.column_6,field.column_7,field.column_8,field.column_9) %>
+  <% @col1.push(field.column_1) %>
+  <% @col2.push(field.column_2) %>
+  <% @col3.push(field.column_3) %>
+  <% @col4.push(field.column_4) %>
+  <% @col5.push(field.column_5) %>
+  <% @col6.push(field.column_6) %>
+  <% @col7.push(field.column_7) %>
+  <% @col8.push(field.column_8) %>
+  <% @col9.push(field.column_9) %>
+  <% @sub1.push(field.column_1,field.column_2,field.column_3)%>
+  <% @sub2.push(field.column_4,field.column_5,field.column_6)%>
+  <% @sub3.push(field.column_7,field.column_8,field.column_9)%>
+  <% when 3 %>
+  <% @row3.push(field.column_1,field.column_2,field.column_3,field.column_4,field.column_5,field.column_6,field.column_7,field.column_8,field.column_9) %>
+  <% @col1.push(field.column_1) %>
+  <% @col2.push(field.column_2) %>
+  <% @col3.push(field.column_3) %>
+  <% @col4.push(field.column_4) %>
+  <% @col5.push(field.column_5) %>
+  <% @col6.push(field.column_6) %>
+  <% @col7.push(field.column_7) %>
+  <% @col8.push(field.column_8) %>
+  <% @col9.push(field.column_9) %>
+  <% @sub1.push(field.column_1,field.column_2,field.column_3)%>
+  <% @sub2.push(field.column_4,field.column_5,field.column_6)%>
+  <% @sub3.push(field.column_7,field.column_8,field.column_9)%>
+  <% when 4 %>
+  <% @row4.push(field.column_1,field.column_2,field.column_3,field.column_4,field.column_5,field.column_6,field.column_7,field.column_8,field.column_9) %>
+  <% @col1.push(field.column_1) %>
+  <% @col2.push(field.column_2) %>
+  <% @col3.push(field.column_3) %>
+  <% @col4.push(field.column_4) %>
+  <% @col5.push(field.column_5) %>
+  <% @col6.push(field.column_6) %>
+  <% @col7.push(field.column_7) %>
+  <% @col8.push(field.column_8) %>
+  <% @col9.push(field.column_9) %>
+  <% @sub4.push(field.column_1,field.column_2,field.column_3)%>
+  <% @sub5.push(field.column_4,field.column_5,field.column_6)%>
+  <% @sub6.push(field.column_7,field.column_8,field.column_9)%>
+  <% when 5 %>
+  <% @row5.push(field.column_1,field.column_2,field.column_3,field.column_4,field.column_5,field.column_6,field.column_7,field.column_8,field.column_9) %>
+  <% @col1.push(field.column_1) %>
+  <% @col2.push(field.column_2) %>
+  <% @col3.push(field.column_3) %>
+  <% @col4.push(field.column_4) %>
+  <% @col5.push(field.column_5) %>
+  <% @col6.push(field.column_6) %>
+  <% @col7.push(field.column_7) %>
+  <% @col8.push(field.column_8) %>
+  <% @col9.push(field.column_9) %>
+  <% @sub4.push(field.column_1,field.column_2,field.column_3)%>
+  <% @sub5.push(field.column_4,field.column_5,field.column_6)%>
+  <% @sub6.push(field.column_7,field.column_8,field.column_9)%>
+  <% when 6 %>
+  <% @row6.push(field.column_1,field.column_2,field.column_3,field.column_4,field.column_5,field.column_6,field.column_7,field.column_8,field.column_9) %>
+  <% @col1.push(field.column_1) %>
+  <% @col2.push(field.column_2) %>
+  <% @col3.push(field.column_3) %>
+  <% @col4.push(field.column_4) %>
+  <% @col5.push(field.column_5) %>
+  <% @col6.push(field.column_6) %>
+  <% @col7.push(field.column_7) %>
+  <% @col8.push(field.column_8) %>
+  <% @col9.push(field.column_9) %>
+  <% @sub4.push(field.column_1,field.column_2,field.column_3)%>
+  <% @sub5.push(field.column_4,field.column_5,field.column_6)%>
+  <% @sub6.push(field.column_7,field.column_8,field.column_9)%>
+  <% when 7 %>
+  <% @row7.push(field.column_1,field.column_2,field.column_3,field.column_4,field.column_5,field.column_6,field.column_7,field.column_8,field.column_9) %>
+  <% @col1.push(field.column_1) %>
+  <% @col2.push(field.column_2) %>
+  <% @col3.push(field.column_3) %>
+  <% @col4.push(field.column_4) %>
+  <% @col5.push(field.column_5) %>
+  <% @col6.push(field.column_6) %>
+  <% @col7.push(field.column_7) %>
+  <% @col8.push(field.column_8) %>
+  <% @col9.push(field.column_9) %>
+  <% @sub7.push(field.column_1,field.column_2,field.column_3)%>
+  <% @sub8.push(field.column_4,field.column_5,field.column_6)%>
+  <% @sub9.push(field.column_7,field.column_8,field.column_9)%>
+  <% when 8 %>
+  <% @row8.push(field.column_1,field.column_2,field.column_3,field.column_4,field.column_5,field.column_6,field.column_7,field.column_8,field.column_9) %>
+  <% @col1.push(field.column_1) %>
+  <% @col2.push(field.column_2) %>
+  <% @col3.push(field.column_3) %>
+  <% @col4.push(field.column_4) %>
+  <% @col5.push(field.column_5) %>
+  <% @col6.push(field.column_6) %>
+  <% @col7.push(field.column_7) %>
+  <% @col8.push(field.column_8) %>
+  <% @col9.push(field.column_9) %>
+  <% @sub7.push(field.column_1,field.column_2,field.column_3)%>
+  <% @sub8.push(field.column_4,field.column_5,field.column_6)%>
+  <% @sub9.push(field.column_7,field.column_8,field.column_9)%>
+  <% when 9 %>
+  <% @row9.push(field.column_1,field.column_2,field.column_3,field.column_4,field.column_5,field.column_6,field.column_7,field.column_8,field.column_9) %>
+  <% @col1.push(field.column_1) %>
+  <% @col2.push(field.column_2) %>
+  <% @col3.push(field.column_3) %>
+  <% @col4.push(field.column_4) %>
+  <% @col5.push(field.column_5) %>
+  <% @col6.push(field.column_6) %>
+  <% @col7.push(field.column_7) %>
+  <% @col8.push(field.column_8) %>
+  <% @col9.push(field.column_9) %>
+  <% @sub7.push(field.column_1,field.column_2,field.column_3)%>
+  <% @sub8.push(field.column_4,field.column_5,field.column_6)%>
+  <% @sub9.push(field.column_7,field.column_8,field.column_9)%>
+  <% end %>
+  <% i = i + 1 %>
+  <% end %>
+  <% if @chk == true then @chk = @row1.sort == @temp end %> 
+  <% if @chk == true then @chk = @row2.sort == @temp end %> 
+  <% if @chk == true then @chk = @row3.sort == @temp end %> 
+  <% if @chk == true then @chk = @row4.sort == @temp end %> 
+  <% if @chk == true then @chk = @row5.sort == @temp end %> 
+  <% if @chk == true then @chk = @row6.sort == @temp end %> 
+  <% if @chk == true then @chk = @row7.sort == @temp end %> 
+  <% if @chk == true then @chk = @row8.sort == @temp end %> 
+  <% if @chk == true then @chk = @row9.sort == @temp end %> 
+  <% if @chk == true then @chk = @col1.sort == @temp end %> 
+  <% if @chk == true then @chk = @col2.sort == @temp end %> 
+  <% if @chk == true then @chk = @col3.sort == @temp end %> 
+  <% if @chk == true then @chk = @col4.sort == @temp end %> 
+  <% if @chk == true then @chk = @col5.sort == @temp end %> 
+  <% if @chk == true then @chk = @col6.sort == @temp end %> 
+  <% if @chk == true then @chk = @col7.sort == @temp end %> 
+  <% if @chk == true then @chk = @col8.sort == @temp end %> 
+  <% if @chk == true then @chk = @col9.sort == @temp end %> 
+  <% if @chk == true then @chk = @sub1.sort == @temp end %> 
+  <% if @chk == true then @chk = @sub2.sort == @temp end %> 
+  <% if @chk == true then @chk = @sub3.sort == @temp end %> 
+  <% if @chk == true then @chk = @sub4.sort == @temp end %> 
+  <% if @chk == true then @chk = @sub5.sort == @temp end %> 
+  <% if @chk == true then @chk = @sub6.sort == @temp end %> 
+  <% if @chk == true then @chk = @sub7.sort == @temp end %> 
+  <% if @chk == true then @chk = @sub8.sort == @temp end %> 
+  <% if @chk == true then @chk = @sub9.sort == @temp end %> 
+  <tr>
+    <td><%= '================================================================================' %></td>
+  </tr>
+  <tr>
+    <td><%= 'Row : ' %><%= @row1 %><%= '|' %><%= @row2 %><%= '|' %><%= @row3 %><%= '|' %><%= @row4 %><%= '|' %><%= @row5 %><%= '|' %><%= @row6 %><%= '|' %><%= @row7 %><%= '|' %><%= @row8 %><%= '|' %><%= @row9 %></td>
+  </tr>
+  <tr>
+    <td><%= '================================================================================' %></td>
+  </tr>
+  <tr>
+    <td><%= 'Column : ' %><%= @col1 %><%= '|' %><%= @col2 %><%= '|' %><%= @col3 %><%= '|' %><%= @col4 %><%= '|' %><%= @col5 %><%= '|' %><%= @col6 %><%= '|' %><%= @col7 %><%= '|' %><%= @col8 %><%= '|' %><%= @col9 %></td>
+  </tr>
+  <tr>
+    <td><%= '================================================================================' %></td>
+  </tr>
+  <tr>
+    <td><%= 'Sub Table : ' %><%= @sub1 %><%= '|' %><%= @sub2 %><%= '|' %><%= @sub3 %><%= '|' %><%= @sub4 %><%= '|' %><%= @sub5 %><%= '|' %><%= @sub6 %><%= '|' %><%= @sub7 %><%= '|' %><%= @sub8 %><%= '|' %><%= @sub9 %></td>
+  </tr>
+  <tr>
+    <td><%= '================================================================================' %></td>
+  </tr>
+  <tr>
+    <td><%= 'Result : ' %><%= @chk %></td>
   </tr>
 </table>
-
 
 <%= link_to 'Edit', edit_sudoku_path(@sudoku) %> |
 <%= link_to 'Back', sudokus_path %>

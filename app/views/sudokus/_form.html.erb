@@ -13,20 +13,21 @@
 
 <table>
   <tr>
-    <td><%= f.text_field :field11 %></td>
-    <td><%= f.text_field :field12 %></td>
-    <td><%= f.text_field :field13 %></td>
-  </tr> 
-  <tr>
-    <td><%= f.text_field :field21 %></td>
-    <td><%= f.text_field :field22 %></td>
-    <td><%= f.text_field :field23 %></td>
-  </tr> 
-  <tr>
-    <td><%= f.text_field :field31 %></td>
-    <td><%= f.text_field :field32 %></td>
-    <td><%= f.text_field :field33 %></td>
+    <th> Name </th>
   </tr>
+  <tr>
+    <td><%= f.text_field :name %></td>
+  </tr>
+  <% @sudoku.details.each do |field| %>
+  <%= f.fields_for(field) do |r| %>
+  <tr>
+  <td><%= '================================================================================' %></td>
+  </tr>
+  <tr>
+    <td><%= r.text_field(:column_1) %><%= r.text_field(:column_2) %><%= r.text_field(:column_3) %><%= r.text_field(:column_4) %><%= r.text_field(:column_5) %><%= r.text_field(:column_6) %><%= r.text_field(:column_7) %><%= r.text_field(:column_8) %><%= r.text_field(:column_9) %></td>
+  </tr>
+  <% end %>
+  <% end %>
 </table>
 <div class="actions">
     <%= f.submit %>

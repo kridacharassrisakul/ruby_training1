@@ -1,8 +1,8 @@
-<h1>Listing sudokus</h1>
+<h1>Listing sudoku detail</h1>
 
 <table>
   <tr>
-    <td>Id</td>
+    <th>Id</th>
     <th>Name</th>
   </tr>
 
@@ -10,15 +10,15 @@
   <tr>
     <td><%= sudoku.id %></td>
     <td><%= sudoku.name %></td>
+  </tr>
+  <tr
     <td><%= link_to 'Show', sudoku %></td>
-    <td><%= link_to 'Edit', edit_sudoku_path(sudoku) %></td>
+    <td><%= link_to 'Edit', edit_detail_path(sudoku) %></td>
     <td><%= link_to 'Destroy', sudoku, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
-<% if @sudokus.size == 0 %>
-  <em>No data found</em>
-<% end %>
+
 <br />
 
-<%= link_to 'New Sudoku', new_sudoku_path %>
+<%= link_to 'New Sudoku Detail', new_detail_path %>

@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-FiveMinute::Application.load_tasks
+Sudoku99::Application.load_tasks

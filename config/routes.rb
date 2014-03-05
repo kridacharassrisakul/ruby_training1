@@ -1,7 +1,10 @@
-FiveMinute::Application.routes.draw do
-  get 'posts/hello' => 'posts#hello'
-  resources :posts 
+Sudoku99::Application.routes.draw do
+  get '/google' => redirect('http://www.google.com/')
+  get '/all' => redirect('/sudokus')
+
+  root to: "sudokus#index"
   resources :sudokus
+  resources :details
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

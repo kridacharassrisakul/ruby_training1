@@ -11,26 +11,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140225093838) do
+ActiveRecord::Schema.define(:version => 20140303103154) do
 
-  create_table "posts", :force => true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.boolean  "published"
+  create_table "details", :force => true do |t|
+    t.integer  "row_record"
+    t.integer  "column_1"
+    t.integer  "column_2"
+    t.integer  "column_3"
+    t.integer  "column_4"
+    t.integer  "column_5"
+    t.integer  "column_6"
+    t.integer  "column_7"
+    t.integer  "column_8"
+    t.integer  "column_9"
+    t.integer  "sudoku_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "sudokus", :force => true do |t|
-    t.integer  "field11"
-    t.integer  "field12"
-    t.integer  "field13"
-    t.integer  "field21"
-    t.integer  "field22"
-    t.integer  "field23"
-    t.integer  "field31"
-    t.integer  "field32"
-    t.integer  "field33"
+    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

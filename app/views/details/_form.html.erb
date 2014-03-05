@@ -1,0 +1,25 @@
+<%= form_for(@sudoku) do |f| %>
+  <% if @sudoku.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sudoku.errors.count, "error") %> prohibited this sudoku from being saved:</h2>
+
+      <ul>
+      <% @sudoku.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<table>
+  <tr>
+    <th> Name </th>
+  </tr>
+  <tr>
+    <td><%= f.text_field :name %></td>
+  </tr>
+</table>
+<div class="actions">
+    <%= f.submit %>
+</div>
+<% end %>

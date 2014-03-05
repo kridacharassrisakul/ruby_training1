@@ -1,0 +1,21 @@
+<h1>Editing sudoku</h1>
+
+<%= render 'form' %>
+<%= form_for(@r1) do |f| %>
+<table>
+    <tr>
+      <td><%= f.text_field :row %></td>
+      <td><%= f.text_field :coloum_1 %></td>
+      <td><%= f.text_field :coloum_2 %></td>
+      <td><%= f.text_field :coloum_3 %></td>
+      <td><%= f.text_field :coloum_4 %></td>
+      <td><%= f.text_field :coloum_5 %></td>
+      <td><%= f.text_field :coloum_6 %></td>
+      <td><%= f.text_field :coloum_7 %></td>
+      <td><%= f.text_field :coloum_8 %></td>
+      <td><%= f.text_field :coloum_9 %></td>
+    </tr>
+</table>
+<% end %>
+<%= link_to 'Show', @sudoku %> |
+<%= link_to 'Back', details_path %>
