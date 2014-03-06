@@ -11,10 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140303103154) do
+ActiveRecord::Schema.define(:version => 20140306060334) do
 
   create_table "details", :force => true do |t|
-    t.integer  "row_record"
     t.integer  "column_1"
     t.integer  "column_2"
     t.integer  "column_3"

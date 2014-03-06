@@ -18,6 +18,11 @@
   <tr>
     <td><%= f.text_field :name %></td>
   </tr>
+  <%= f.fields_for :details do |builder| %>
+    <%= render "sudoku", :f => builder %>
+  <% end %>
+  <%#= render 'sudoku', locals: {sudoku: @sudoku} %>
+
 </table>
 <div class="actions">
     <%= f.submit %>
