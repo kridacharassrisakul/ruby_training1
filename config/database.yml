@@ -12,7 +12,7 @@
 #   password: ubuntu
 
 development:
-  host: ec2-107-21-100-118.compute-1.amazonaws.com
-  database: d1mosici8mhtde
-  user: mjfygdeywprsod
-  password: m7mPCi_y2xGXflbPZL-V-H7IXO
+  host: ec2-23-23-81-171.compute-1.amazonaws.com
+  database: dfgijukch9am0t
+  user: yzldgxqhwxtiyp
+  password: kOnWdEvZhAyVxs5Es0KGFsy7OT
