@@ -34,7 +34,8 @@ class SudokusController < ApplicationController
 
   # GET /sudokus/1/edit
   def edit
-    @sudoku = Sudoku.find(params[:id])
+    #@sudoku = Sudoku.find(params[:id])
+    @sudoku = Sudoku.includes([:details]).find(params[:id])
   end
 
   # POST /sudokus
@@ -75,6 +76,10 @@ class SudokusController < ApplicationController
   def update
     @sudoku = Sudoku.find(params[:id])
     
+    #@sudoku.details.each do |detail|
+
+    #end
+
     respond_to do |format|
       if @sudoku.update_attributes(params[:sudoku])
         format.html { redirect_to @sudoku, notice: 'Sudoku was successfully updated.' }

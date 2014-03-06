@@ -9,6 +9,7 @@
   </tr>
   <% @temp = [1,2,3,4,5,6,7,8,9] %>
   <% @chk = true %>
+
   <% @row1 = [] %>
   <% @row2 = [] %>
   <% @row3 = [] %>
@@ -42,7 +43,7 @@
   <td><%= '================================================================================' %></td>
   </tr>
   <tr>
-    <td><%= field.column_1 %><%= '|' %><%= field.column_2 %><%= '|' %><%= field.column_3 %><%= '|' %><%= field.column_4 %><%= '|' %><%= field.column_5 %><%= '|' %><%= field.column_6 %><%= '|' %><%= field.column_7 %><%= '|' %><%= field.column_8 %><%= '|' %><%= field.column_9 %></td>
+    <td><%= field.column_1.to_s + '|' + field.column_2.to_s + '|' + field.column_3.to_s + '|' + field.column_4.to_s + '|' + field.column_5.to_s + '|' + field.column_6.to_s + '|' + field.column_7.to_s + '|' + field.column_8.to_s + '|' + field.column_9.to_s %></td>
   </tr>
   <% case i %>
   <% when 1 %>
@@ -172,7 +173,7 @@
   <% @sub8.push(field.column_4,field.column_5,field.column_6)%>
   <% @sub9.push(field.column_7,field.column_8,field.column_9)%>
   <% end %>
-  <% i = i + 1 %>
+  <% i += 1 %>
   <% end %>
   <% if @chk == true then @chk = @row1.sort == @temp end %> 
   <% if @chk == true then @chk = @row2.sort == @temp end %> 
@@ -205,19 +206,19 @@
     <td><%= '================================================================================' %></td>
   </tr>
   <tr>
-    <td><%= 'Row : ' %><%= @row1 %><%= '|' %><%= @row2 %><%= '|' %><%= @row3 %><%= '|' %><%= @row4 %><%= '|' %><%= @row5 %><%= '|' %><%= @row6 %><%= '|' %><%= @row7 %><%= '|' %><%= @row8 %><%= '|' %><%= @row9 %></td>
+    <td><%= 'Row : ' + @row1.to_s + '|' + @row2.to_s + '|' + @row3.to_s+ '|' + @row4.to_s + '|' + @row5.to_s + '|' + @row6.to_s + '|' + @row7.to_s + '|' + @row8.to_s + '|' + @row9.to_s %></td>
   </tr>
   <tr>
     <td><%= '================================================================================' %></td>
   </tr>
   <tr>
-    <td><%= 'Column : ' %><%= @col1 %><%= '|' %><%= @col2 %><%= '|' %><%= @col3 %><%= '|' %><%= @col4 %><%= '|' %><%= @col5 %><%= '|' %><%= @col6 %><%= '|' %><%= @col7 %><%= '|' %><%= @col8 %><%= '|' %><%= @col9 %></td>
+    <td><%= 'Column : ' + @col1.to_s + '|' + @col2.to_s + '|' + @col3.to_s+ '|' + @col4.to_s + '|' + @col5.to_s + '|' + @col6.to_s + '|' + @col7.to_s + '|' + @col8.to_s + '|' + @col9.to_s %></td>
   </tr>
   <tr>
     <td><%= '================================================================================' %></td>
   </tr>
   <tr>
-    <td><%= 'Sub Table : ' %><%= @sub1 %><%= '|' %><%= @sub2 %><%= '|' %><%= @sub3 %><%= '|' %><%= @sub4 %><%= '|' %><%= @sub5 %><%= '|' %><%= @sub6 %><%= '|' %><%= @sub7 %><%= '|' %><%= @sub8 %><%= '|' %><%= @sub9 %></td>
+    <td><%= 'Sub Table : ' + @sub1.to_s + '|' + @sub2.to_s + '|' + @sub3.to_s+ '|' + @sub4.to_s + '|' + @sub5.to_s + '|' + @sub6.to_s + '|' + @sub7.to_s + '|' + @sub8.to_s + '|' + @sub9.to_s%></td>
   </tr>
   <tr>
     <td><%= '================================================================================' %></td>
