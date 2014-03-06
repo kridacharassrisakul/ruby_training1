@@ -1,6 +1,5 @@
 class Detail < ActiveRecord::Base 
 	belongs_to :sudoku
-	#validates_associated :sudoku
 	validates :column_1, presence: true, inclusion: 1..9
 	validates :column_2, presence: true, inclusion: 1..9
 	validates :column_3, presence: true, inclusion: 1..9

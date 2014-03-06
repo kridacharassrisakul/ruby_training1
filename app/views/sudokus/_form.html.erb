@@ -13,10 +13,7 @@
 
 <table>
   <tr>
-    <th> Name </th>
-  </tr>
-  <tr>
-    <td><%= f.text_field :name %></td>
+    <td><%= "Name" %><%= f.text_field :name, maxlength: 50, class: "inputname" %></td>
   </tr>
   <%= f.fields_for :details do |builder| %>
     <%= render "sudoku", :f => builder %>
