@@ -61,10 +61,6 @@ class SudokusController < ApplicationController
   # PUT /sudokus/1.json
   def update
     @sudoku = Sudoku.find(params[:id])
-    
-    @sudoku.details.each do |detail|
-
-    end
 
     respond_to do |format|
       if @sudoku.update_attributes(params[:sudoku])
