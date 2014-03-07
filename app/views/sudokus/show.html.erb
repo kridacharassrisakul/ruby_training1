@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <th>Name</th>
+    <th> Sudoku </th>
   </tr>
   <tr>
     <td><%= 'Name : ' %><%= @sudoku.name %></td>
@@ -38,12 +38,15 @@
   <% @sub8 = [] %>
   <% @sub9 = [] %>
   <% i = 1 %>
+  <tr>
+  <td><%= '============' %></td>
+  </tr>
   <% @sudoku.details.each do |field| %>
   <tr>
-  <td><%= '================================================================================' %></td>
+    <td><%= field.column_1.to_s + ' ' + field.column_2.to_s + ' ' + field.column_3.to_s + ' | ' + field.column_4.to_s + ' ' + field.column_5.to_s + ' ' + field.column_6.to_s + ' | ' + field.column_7.to_s + ' ' + field.column_8.to_s + ' ' + field.column_9.to_s %></td>
   </tr>
   <tr>
-    <td><%= field.column_1.to_s + '|' + field.column_2.to_s + '|' + field.column_3.to_s + '|' + field.column_4.to_s + '|' + field.column_5.to_s + '|' + field.column_6.to_s + '|' + field.column_7.to_s + '|' + field.column_8.to_s + '|' + field.column_9.to_s %></td>
+   <td><%= if (i % 3 == 0) then '============' end %></td>
   </tr>
   <% case i %>
   <% when 1 %>
@@ -203,28 +206,25 @@
   <% if @chk == true then @chk = @sub8.sort == @temp end %> 
   <% if @chk == true then @chk = @sub9.sort == @temp end %> 
   <tr>
-    <td><%= '================================================================================' %></td>
-  </tr>
-  <tr>
-    <td><%= 'Row : ' + @row1.to_s + '|' + @row2.to_s + '|' + @row3.to_s+ '|' + @row4.to_s + '|' + @row5.to_s + '|' + @row6.to_s + '|' + @row7.to_s + '|' + @row8.to_s + '|' + @row9.to_s %></td>
-  </tr>
-  <tr>
-    <td><%= '================================================================================' %></td>
-  </tr>
-  <tr>
-    <td><%= 'Column : ' + @col1.to_s + '|' + @col2.to_s + '|' + @col3.to_s+ '|' + @col4.to_s + '|' + @col5.to_s + '|' + @col6.to_s + '|' + @col7.to_s + '|' + @col8.to_s + '|' + @col9.to_s %></td>
-  </tr>
-  <tr>
-    <td><%= '================================================================================' %></td>
-  </tr>
-  <tr>
-    <td><%= 'Sub Table : ' + @sub1.to_s + '|' + @sub2.to_s + '|' + @sub3.to_s+ '|' + @sub4.to_s + '|' + @sub5.to_s + '|' + @sub6.to_s + '|' + @sub7.to_s + '|' + @sub8.to_s + '|' + @sub9.to_s%></td>
-  </tr>
-  <tr>
-    <td><%= '================================================================================' %></td>
+    <td><%= '============' %></td>
   </tr>
   <tr>
     <td><%= 'Result : ' %><%= @chk %></td>
+  </tr>
+  <tr>
+    <td><%= '================================================================================' %></td>
+  </tr>
+  <tr>
+    <td><%= 'Check Row : ' + @row1.to_s + '|' + @row2.to_s + '|' + @row3.to_s+ '|' + @row4.to_s + '|' + @row5.to_s + '|' + @row6.to_s + '|' + @row7.to_s + '|' + @row8.to_s + '|' + @row9.to_s %></td>
+  </tr>
+  <tr>
+    <td><%= 'Check Column : ' + @col1.to_s + '|' + @col2.to_s + '|' + @col3.to_s+ '|' + @col4.to_s + '|' + @col5.to_s + '|' + @col6.to_s + '|' + @col7.to_s + '|' + @col8.to_s + '|' + @col9.to_s %></td>
+  </tr>
+  <tr>
+    <td><%= 'Check Sub Table : ' + @sub1.to_s + '|' + @sub2.to_s + '|' + @sub3.to_s+ '|' + @sub4.to_s + '|' + @sub5.to_s + '|' + @sub6.to_s + '|' + @sub7.to_s + '|' + @sub8.to_s + '|' + @sub9.to_s%></td>
+  </tr>
+  <tr>
+    <td><%= '================================================================================' %></td>
   </tr>
 </table>
 

@@ -4,15 +4,15 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 
-development:
-  adapter : postgresql
-  host: localhost
-  database: sudokudb
-  user: ubuntu
-  password: ubuntu
-
 # development:
-#   host: ec2-54-225-135-30.compute-1.amazonaws.com
-#   database: d91ghbnat92col
-#   user: nzyzuqezhupqzw
-#   password: 3qHHEDTti8ZOzOo8OguxKHZI-z
+#   adapter : postgresql
+#   host: localhost
+#   database: sudokudb
+#   user: ubuntu
+#   password: ubuntu
+
+development:
+  host: ec2-54-225-135-30.compute-1.amazonaws.com
+  database: d91ghbnat92col
+  user: nzyzuqezhupqzw
+  password: 3qHHEDTti8ZOzOo8OguxKHZI-z

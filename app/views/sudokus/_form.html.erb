@@ -15,8 +15,17 @@
   <tr>
     <td><%= "Name" %><%= f.text_field :name, maxlength: 50, class: "inputname" %></td>
   </tr>
+  <tr>
+    <td><%= '============================================' %></td>
+  </tr>
+  <% i = 1 %>
   <%= f.fields_for :details do |builder| %>
-    <%= render "sudoku", :f => builder %>
+ 
+  <%= render "sudoku", :f => builder %>
+   <tr>
+    <td><%= if (i % 3 == 0) then '============================================' end %></td>
+  </tr>
+  <% i += 1 %>
   <% end %>
   <%#= render 'sudoku', locals: {sudoku: @sudoku} %>
 
